@@ -11,4 +11,6 @@ export const FeedbackWrapper = styled.div``;
 
 export const FeedbackStatistics = styled.div``;
 
-export const FeedbackTitle = styled.h2``;
+export const FeedbackTitle = styled.h2`
+    margin-bottom: 20px;
+`;
