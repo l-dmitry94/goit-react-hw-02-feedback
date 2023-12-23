@@ -12,23 +12,14 @@ class App extends Component {
         bad: 0,
     };
 
-    handleGood = () => {
-        this.setState(prevState => ({
-            good: prevState.good + 1,
-        }));
-    };
+    handleLeaveFeedback = e => {
+        const feedback = e.target.textContent.toLowerCase();
 
-    handleNeutral = () => {
-        this.setState(prevState => ({
-            neutral: prevState.neutral + 1,
-        }));
-    };
-
-    handleBad = () => {
-        this.setState(prevState => ({
-            bad: prevState.bad + 1,
-        }));
-    };
+        this.setState((prevState) => ({
+            [feedback]: prevState[feedback] + 1
+        }))
+        
+    }
 
     countTotalFeedback = () => {
         const { good, bad, neutral } = this.state;
@@ -55,7 +46,7 @@ class App extends Component {
             <Feedback>
                 <FeedbackWrapper>
                     <Section title="Please, leave feedback">
-                        <FeedbackOptions options={this.options} />
+                        <FeedbackOptions options={['Good', 'Neutral', 'Bad']} onLeaveFeedback={this.handleLeaveFeedback} />
 
                         <FeedbackStatistics>
                             <FeedbackTitle>Statistics</FeedbackTitle>
