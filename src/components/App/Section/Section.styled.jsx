@@ -1,5 +1,9 @@
 import styled from "@emotion/styled";
 
-export const FeedbackTitle = styled.h1`
+export const Title = styled.h1`
+    margin-bottom: 20px;
+`
+
+export const Subtitle = styled.h2`
     margin-bottom: 20px;
 `
